@@ -20,13 +20,13 @@ int main() {
 
     int dayCount = 0;
 
-    /* Skip header */
+    
     int days;
     fscanf(fp,"%d",&days);
-    fgets(line,sizeof(line),fp);
-    fgets(line, sizeof(line), fp);
+    fgets(line,sizeof(line),fp);        //for remaining elements in days line
+    fgets(line, sizeof(line), fp);        //for skip the input sequence name like date,opening price,closing price
 
-    /* Read first 15 days */
+   
     while (fgets(line, sizeof(line), fp) && dayCount <=days) {
 
         sscanf(line, "%[^,],%lf,%lf,%lf,%lf,%lld",
